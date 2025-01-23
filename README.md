@@ -1,2 +1,0 @@
-# JD
-JUANNAS JD
