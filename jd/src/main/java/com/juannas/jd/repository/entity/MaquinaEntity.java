@@ -23,13 +23,13 @@ public class MaquinaEntity {
     private List<ProyectoEntity> proyectos;
     private String placa;
     private String linea;
-    private String tipoIdentificacion;
+    private String tipoEquipo;
     private long modelo;
     private String color;
     private long kilometros;
     private long horometro;
     private String accesorios;
-    private long manifestoImportacion;
+    private String manifestoImportacion;
     @OneToOne(cascade = CascadeType.ALL)
     private SoatEntity soat;
     private LocalDate poliza;

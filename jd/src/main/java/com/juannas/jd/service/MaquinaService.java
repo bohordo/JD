@@ -60,7 +60,7 @@ public class MaquinaService {
         MaquinaEntity existing = getMaquinaByPlaca(placa);
         existing.setPlaca(updatedMaquina.getPlaca());
         existing.setLinea(updatedMaquina.getLinea());
-        existing.setTipoIdentificacion(updatedMaquina.getTipoIdentificacion());
+        existing.setTipoEquipo(updatedMaquina.getTipoEquipo());
         existing.setModelo(updatedMaquina.getModelo());
         existing.setColor(updatedMaquina.getColor());
         existing.setKilometros(updatedMaquina.getKilometros());
