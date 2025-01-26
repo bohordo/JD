@@ -19,7 +19,8 @@ public class ClienteEntity {
     private String identificacion;
     private String tipoIdentificacion;
     private String nombre;
-    private String proyecto;
+    @ManyToMany(fetch = FetchType.LAZY)
+    private List<ProyectoEntity> proyectos = new ArrayList<>();
     @ManyToMany(mappedBy = "clientes", cascade = CascadeType.ALL)
     private List<MaquinaEntity> maquinasAlquiladas = new ArrayList<>();
 }

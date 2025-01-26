@@ -17,7 +17,6 @@ public class ProyectoEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int proyectoId;
     private String nombre;
-
     @ManyToMany(mappedBy = "proyectos")
     private List<MaquinaEntity> maquinas = new ArrayList<>();
 }

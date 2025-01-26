@@ -5,17 +5,13 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
 import java.util.Optional;
 
-
-public interface MaquinaRepository extends CrudRepository<MaquinaEntity, Integer> {
-    Optional<MaquinaEntity> findByPlaca(String placa);
+public interface ClienteRepository extends CrudRepository<ClienteEntity, Integer> {
+    Optional<ClienteEntity> findByIdentificacion(String identificacion);
 
     @Transactional
     @Modifying
-    @Query("DELETE FROM MaquinaEntity m WHERE m.placa = :placa")
-    void deleteByPlaca(String placa);
-
-    List<MaquinaEntity> findByPlacaIn(List<String> placas);
+    @Query("DELETE FROM ClienteEntity c WHERE c.identificacion = :identificacion")
+    void deleteByIdentificacion(String identificacion);
 }

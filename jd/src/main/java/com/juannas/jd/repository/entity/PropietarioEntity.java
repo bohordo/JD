@@ -16,6 +16,7 @@ public class PropietarioEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int propietarioId;
+    private String identificacion;
     private String nombre;
     private String tipoIdentificacion;
     @OneToMany(mappedBy = "propietario", cascade = CascadeType.ALL)

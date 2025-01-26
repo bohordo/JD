@@ -16,6 +16,7 @@ public class ProveedorEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int proveedorId;
+    private String identificacion;
     private String nombre;
     private String tipoIdentificacion;
     @OneToMany(mappedBy = "proveedor", cascade = CascadeType.ALL)

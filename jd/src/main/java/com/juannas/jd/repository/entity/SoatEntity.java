@@ -18,6 +18,7 @@ public class SoatEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int soatId;
+    private String numeroPoliza;
     private LocalDate vigenciaDesde;
     private LocalDate vigenciaHasta;
     private String aseguradora;
