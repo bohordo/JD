@@ -1,5 +1,6 @@
-package com.juannas.jd.repository.entity;
+package com.juannas.jd.repository;
 
+import com.juannas.jd.repository.entity.SoatEntity;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;

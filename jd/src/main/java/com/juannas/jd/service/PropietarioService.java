@@ -1,8 +1,8 @@
 package com.juannas.jd.service;
 
-import com.juannas.jd.repository.entity.MaquinaRepository;
+import com.juannas.jd.repository.MaquinaRepository;
 import com.juannas.jd.repository.entity.PropietarioEntity;
-import com.juannas.jd.repository.entity.PropietarioRepository;
+import com.juannas.jd.repository.PropietarioRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

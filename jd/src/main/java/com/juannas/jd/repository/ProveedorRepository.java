@@ -1,5 +1,6 @@
-package com.juannas.jd.repository.entity;
+package com.juannas.jd.repository;
 
+import com.juannas.jd.repository.entity.ProveedorEntity;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -7,11 +8,11 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
-public interface ClienteRepository extends CrudRepository<ClienteEntity, Integer> {
-    Optional<ClienteEntity> findByIdentificacion(String identificacion);
+public interface ProveedorRepository extends CrudRepository<ProveedorEntity, Integer> {
+    Optional<ProveedorEntity> findByIdentificacion(String identificacion);
 
     @Transactional
     @Modifying
-    @Query("DELETE FROM ClienteEntity c WHERE c.identificacion = :identificacion")
+    @Query("DELETE FROM ProveedorEntity p WHERE p.identificacion = :identificacion")
     void deleteByIdentificacion(String identificacion);
 }

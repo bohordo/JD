@@ -1,7 +1,7 @@
 package com.juannas.jd.service;
 
 import com.juannas.jd.repository.entity.SoatEntity;
-import com.juannas.jd.repository.entity.SoatRepository;
+import com.juannas.jd.repository.SoatRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
