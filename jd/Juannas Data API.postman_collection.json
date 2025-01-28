@@ -567,6 +567,9 @@
 				{
 					"name": "Proyecto Create",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -639,6 +642,120 @@
 								"proyectos",
 								"delete",
 								"Proyecto1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orden Servicio",
+			"item": [
+				{
+					"name": "All Ordenes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/ordenes-servicio",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"ordenes-servicio"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Ordenes",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tipo_orden\":\"Orden Final de Facturación\",\r\n\r\n    \"consecutivo_orden_informativa\":\"OS 2024 114\",\r\n\r\n    \"consecutivo_orden_final\":\"OS 2024 307\",\r\n\r\n    \"fecha_orden_informativa\":\"\",\r\n    \r\n    \"fecha_orden_final\":\"\",\r\n    \r\n    \"nombre_proyecto\":\"\",\r\n    \r\n    \"periodo\":\"\",\r\n\r\n    \"municipio\":\"\",\r\n    \r\n    \"departamento\":\"\",\r\n    \r\n    \"lider_proyecto\":\"\",\r\n    \r\n    \"objeto_general\":\"\",\r\n\r\n    \"especificaciones_tecnicas\":\"\",\r\n    \r\n    \"obligaciones_contratado\":\"\",\r\n\r\n    \"obligaciones_contratante\":\"\",\r\n\r\n    \"condiciones_economicas\":\"\",\r\n    \r\n    \"requisitos_personal_sst\":\"\",\r\n\r\n    \"nombre_razon_social\":\"\",\r\n\r\n    \"cedula_nit\":\"\",\r\n\r\n    \"direccion\":\"\",\r\n\r\n    \"tel_1\":\"\",\r\n\r\n    \"tel_2\":\"\",\r\n\r\n    \"email\":\"\",\r\n\r\n    \"observaciones\":\"Certificamos que se ha recibido oferta verbal o escrita para la adquisición del bien y/o servicio requerido expresamente en esta solicitud, que el proveedor seleccionado cumple y acepta las condiciones establecidas por la Empresa para este tipo de órdenes contractuales, que se verificó la razonabilidad del precio ofrecido y que la información suministrada en el presente formato es veráz y corresponde a lo ofertado por el proveedor (a).\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/ordenes-servicio",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"ordenes-servicio"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ordenes by Id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tipo_orden\":\"Orden Final de Facturación\",\r\n\r\n    \"consecutivo_orden_informativa\":\"OS 2024 114\",\r\n\r\n    \"consecutivo_orden_final\":\"OS 2024 307\",\r\n\r\n    \"fecha_orden_informativa\":\"\",\r\n    \r\n    \"fecha_orden_final\":\"\",\r\n    \r\n    \"nombre_proyecto\":\"\",\r\n    \r\n    \"periodo\":\"\",\r\n\r\n    \"municipio\":\"\",\r\n    \r\n    \"departamento\":\"\",\r\n    \r\n    \"lider_proyecto\":\"\",\r\n    \r\n    \"objeto_general\":\"\",\r\n\r\n    \"especificaciones_tecnicas\":\"\",\r\n    \r\n    \"obligaciones_contratado\":\"\",\r\n\r\n    \"obligaciones_contratante\":\"\",\r\n\r\n    \"condiciones_economicas\":\"\",\r\n    \r\n    \"requisitos_personal_sst\":\"\",\r\n\r\n    \"nombre_razon_social\":\"\",\r\n\r\n    \"cedula_nit\":\"\",\r\n\r\n    \"direccion\":\"\",\r\n\r\n    \"tel_1\":\"\",\r\n\r\n    \"tel_2\":\"\",\r\n\r\n    \"email\":\"\",\r\n\r\n    \"observaciones\":\"Cer.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/ordenes-servicio/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"ordenes-servicio",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ordenes by Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tipo_orden\":\"Orden Final de Facturación\",\r\n\r\n    \"consecutivo_orden_informativa\":\"OS 2024 114\",\r\n\r\n    \"consecutivo_orden_final\":\"OS 2024 307\",\r\n\r\n    \"fecha_orden_informativa\":\"\",\r\n    \r\n    \"fecha_orden_final\":\"\",\r\n    \r\n    \"nombre_proyecto\":\"\",\r\n    \r\n    \"periodo\":\"\",\r\n\r\n    \"municipio\":\"\",\r\n    \r\n    \"departamento\":\"\",\r\n    \r\n    \"lider_proyecto\":\"\",\r\n    \r\n    \"objeto_general\":\"\",\r\n\r\n    \"especificaciones_tecnicas\":\"\",\r\n    \r\n    \"obligaciones_contratado\":\"\",\r\n\r\n    \"obligaciones_contratante\":\"\",\r\n\r\n    \"condiciones_economicas\":\"\",\r\n    \r\n    \"requisitos_personal_sst\":\"\",\r\n\r\n    \"nombre_razon_social\":\"\",\r\n\r\n    \"cedula_nit\":\"\",\r\n\r\n    \"direccion\":\"\",\r\n\r\n    \"tel_1\":\"\",\r\n\r\n    \"tel_2\":\"\",\r\n\r\n    \"email\":\"\",\r\n\r\n    \"observaciones\":\"Certificamos que se ha recibido oferta verbal o escrita para la adquisición del bien y/o servicio requerido expresamente en esta solicitud, que el proveedor seleccionado cumple y acepta las condiciones establecidas por la Empresa para este tipo de órdenes contractuales, que se verificó la razonabilidad del precio ofrecido y que la información suministrada en el presente formato es veráz y corresponde a lo ofertado por el proveedor (a).\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/ordenes-servicio/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"ordenes-servicio",
+								"1"
 							]
 						}
 					},
