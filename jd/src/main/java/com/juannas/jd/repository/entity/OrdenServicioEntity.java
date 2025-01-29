@@ -38,29 +38,10 @@ public class OrdenServicioEntity {
         @JsonProperty("fecha_orden_Final")
         private LocalDate fechaOrdenFinal;
 
-        @Column(name = "nombre_proyecto")
-        @JsonProperty("nombre_proyecto")
-        private String nombreProyecto;
-
-        @Column(name = "periodo")
-        @JsonProperty("periodo")
-        private String periodo;//Preguntar sobre
-
-        @Column(name = "municipio")
-        @JsonProperty("municipio")
-        private String municipio;
-
-        @Column(name = "departamento")
-        @JsonProperty("departamento")
-        private String departamento;
-
-        @Column(name = "lider_proyecto")
-        @JsonProperty("lider_proyecto")
-        private String liderProyecto;
-
-        @Column(name = "objeto_general")
-        @JsonProperty("objeto_general")
-        private String objetoGeneral;
+        //@Column(name = "proyecto")
+        //@JsonProperty("proyecto")
+        //@ManyToMany(mappedBy = "p", cascade = CascadeType.ALL)
+        //private ProyectoEntity proyectoEntity;
 
         @Column(name = "especificaciones_tecnicas")
         @JsonProperty("especificaciones_tecnicas")
@@ -78,33 +59,13 @@ public class OrdenServicioEntity {
         @JsonProperty("condiciones_economicas")
         private String condicionesEconomicas;
 
-        @Column(name = "requisitos_personal_sst")
-        @JsonProperty("requisitos_personal_sst")
-        private String requisitosPersonalSst;
+        @Column(name = "requisitos_personal_sst_texto")
+        @JsonProperty("requisitos_personal_sst_texto")
+        private String requisitosPersonalSstTexto;
 
-        @Column(name = "nombre_razon_social")
-        @JsonProperty("nombre_razon_social")
-        private String nombreRazonSocial;
-
-        @Column(name = "cedula_nit")
-        @JsonProperty("cedula_nit")
-        private String cedulaNit;
-
-        @Column(name = "direccion")
-        @JsonProperty("direccion")
-        private String direccion;
-
-        @Column(name = "tel_1")
-        @JsonProperty("tel_1")
-        private String telUno;
-
-        @Column(name = "tel_2")
-        @JsonProperty("tel_2")
-        private String telDos;
-
-        @Column(name = "email")
-        @JsonProperty("email")
-        private String email;
+        //@Column(name = "requisitos_personal_sst")
+        //@JsonProperty("requisitos_personal_sst")
+        //private RequisitoPersonalSstEntity requisitosPersonalSst;
 
         @Column(name = "observaciones",columnDefinition="LONGTEXT")
         @JsonProperty("observaciones")

@@ -2,9 +2,7 @@
 	"info": {
 		"_postman_id": "1195d92f-4640-4977-b1cc-211cfa8c0d85",
 		"name": "Juannas Data API",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "19902240",
-		"_collection_link": "https://lunar-meadow-13618.postman.co/workspace/My-Workspace~e2675eed-1af3-4559-884f-f9dc1ff33e30/collection/19902240-1195d92f-4640-4977-b1cc-211cfa8c0d85?action=share&source=collection_link&creator=19902240"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
@@ -247,7 +245,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"placa\":\"123\",\r\n    \"linea\":\"123\",\r\n    \"tipoEquipo\":\"FURGÓN\",\r\n    \"modelo\":\"2010\",\r\n    \"color\":\"negro\",\r\n    \"kilometros\":10.5,\r\n    \"horometro\":10.5,\r\n    \"accesorios\":\"accesorios\",\r\n    \"manifestoImportacion\":\"062006000237190-2\",\r\n    \"poliza\":\"\",\r\n    \"rtm\":\"\",\r\n    \"motor\":\"J4039497\",\r\n    \"vinChasis\":\"YQ09-U3746\",\r\n    \"marca\":\"Susuki\"\r\n}",
+							"raw": "{\r\n    \"placa\":\"431\",\r\n    \"linea\":\"123456\",\r\n    \"tipoEquipo\":\"FURGÓN\",\r\n    \"modelo\":\"2010\",\r\n    \"color\":\"negro\",\r\n    \"kilometros\":10.5,\r\n    \"horometro\":10.5,\r\n    \"accesorios\":\"accesorios\",\r\n    \"manifestoImportacion\":\"062006000237190-2\",\r\n    \"poliza\":\"\",\r\n    \"rtm\":\"\",\r\n    \"motor\":\"J4039497\",\r\n    \"vinChasis\":\"YQ09-U3746\",\r\n    \"marca\":\"Susuki\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -276,7 +274,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"placa\":\"123\",\r\n    \"linea\":\"123\",\r\n    \"tipoEquipo\":\"FURGÓN\",\r\n    \"modelo\":\"2010\",\r\n    \"color\":\"blanco\",\r\n    \"kilometros\":10.5,\r\n    \"horometro\":10.5,\r\n    \"accesorios\":\"accesorios\",\r\n    \"manifestoImportacion\":\"062006000237190-2\",\r\n    \"poliza\":\"\",\r\n    \"rtm\":\"\",\r\n    \"motor\":\"J4039497\",\r\n    \"vinChasis\":\"YQ09-U3746\",\r\n    \"marca\":\"Susuki\"\r\n}",
+							"raw": "{\r\n    \"placa\":\"123213213213\",\r\n    \"linea\":\"123\",\r\n    \"tipoEquipo\":\"FURGÓN\",\r\n    \"modelo\":\"2010\",\r\n    \"color\":\"blanco\",\r\n    \"kilometros\":10.5,\r\n    \"horometro\":10.5,\r\n    \"accesorios\":\"accesorios\",\r\n    \"manifestoImportacion\":\"062006000237190-2\",\r\n    \"poliza\":\"\",\r\n    \"rtm\":\"\",\r\n    \"motor\":\"J4039497\",\r\n    \"vinChasis\":\"YQ09-U3746\",\r\n    \"marca\":\"Susuki\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -284,7 +282,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8081/maquinas/update/123",
+							"raw": "http://localhost:8081/maquinas/update/431",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -293,7 +291,7 @@
 							"path": [
 								"maquinas",
 								"update",
-								"123"
+								"431"
 							]
 						}
 					},
@@ -314,7 +312,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8081/maquinas/delete/123",
+							"raw": "http://localhost:8081/maquinas/delete/123213213213",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -323,7 +321,7 @@
 							"path": [
 								"maquinas",
 								"delete",
-								"123"
+								"123213213213"
 							]
 						}
 					},
@@ -574,7 +572,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nombre\":\"Proyecto1\"\r\n}",
+							"raw": "{\r\n    \"nombre\":\"CONCONCRETO METRO LINEA \",\r\n    \"periodo\":\"2.05 al 1.06.24\",\r\n    \"municipio\":\"BOGOTÁ\",\r\n    \"departamento\":\"CUNDINAMARCA\",\r\n    \"lider_proyecto\":\"CARLOS LAMAS \",\r\n    \"cargo_lider_proyecto\":\"COORDINADOR DE LOGISTICA\",\r\n    \"objeto_general\":\"LA ACTIVIDAD A DESARROLLAR ES EXCAVACIÓN, LA DISPONIBILIDAD DEL EQUIPO ES POR 2 MESES  (30 DÍAS COMERCIALES). STAND BY DE 150 HORAS BALDE MENSUALES. (NO SE CALCULA DIARIAMENTE. SI EN EL PERIODO MENSUAL NO SUPERA ESTE STAND BY, SE PAGARA EL STAND BY COMPLETO. SI EN EL PERIODO MENSUAL SE SUPERA ESTE STAND BY SE PAGARA SEGÚN HOROMETRO.) PARA FRACCIÓN DE MES SE HARÁ UN PRORRATEO SOBRE EL STAND BY MENSUAL Y SE PAGARA DE LA MISMA FORMA ANTERIORMENTE SEÑALADA. SE SUMINISTRA EL COMBUSTIBLE Y SE LE DESCUENTA DE LA FACTURA AL PROVEEDOR. LOS MANTENIMIENTOS CORREN POR CUENTA DEL PROVEEDOR, TURNO DIURNO LUNES A SABADOS: 7:00 AM A 05:00 PM O SEGÚN PROGRAMACIÓN. EL RESPONSABLE DE LAS AFILIACIONES, SEGURIDAD SOCIAL DEL OPERADOR ES EL PROVEEDOR.LOS TRASLADOS CORREN POR CUENTA DE TRANSPORTADORA JUANNAS SIEMPRE Y CUANDO SE CUMPLA CON EL TIEMPO ESTIPULADO EN ESTA ORDEN, DE SER SUPERIOR A DOS MESES EL PROVEEDOR DEBERA ASUMIR UN TRANSPORTE, A PARTIR DEL TERCER MES EL PROVEEDOR DEBERA ASUMIR LA TOTALIDAD.\"\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -679,7 +677,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"tipo_orden\":\"Orden Final de Facturación\",\r\n\r\n    \"consecutivo_orden_informativa\":\"OS 2024 114\",\r\n\r\n    \"consecutivo_orden_final\":\"OS 2024 307\",\r\n\r\n    \"fecha_orden_informativa\":\"\",\r\n    \r\n    \"fecha_orden_final\":\"\",\r\n    \r\n    \"nombre_proyecto\":\"\",\r\n    \r\n    \"periodo\":\"\",\r\n\r\n    \"municipio\":\"\",\r\n    \r\n    \"departamento\":\"\",\r\n    \r\n    \"lider_proyecto\":\"\",\r\n    \r\n    \"objeto_general\":\"\",\r\n\r\n    \"especificaciones_tecnicas\":\"\",\r\n    \r\n    \"obligaciones_contratado\":\"\",\r\n\r\n    \"obligaciones_contratante\":\"\",\r\n\r\n    \"condiciones_economicas\":\"\",\r\n    \r\n    \"requisitos_personal_sst\":\"\",\r\n\r\n    \"nombre_razon_social\":\"\",\r\n\r\n    \"cedula_nit\":\"\",\r\n\r\n    \"direccion\":\"\",\r\n\r\n    \"tel_1\":\"\",\r\n\r\n    \"tel_2\":\"\",\r\n\r\n    \"email\":\"\",\r\n\r\n    \"observaciones\":\"Certificamos que se ha recibido oferta verbal o escrita para la adquisición del bien y/o servicio requerido expresamente en esta solicitud, que el proveedor seleccionado cumple y acepta las condiciones establecidas por la Empresa para este tipo de órdenes contractuales, que se verificó la razonabilidad del precio ofrecido y que la información suministrada en el presente formato es veráz y corresponde a lo ofertado por el proveedor (a).\"\r\n}",
+							"raw": "{\r\n  \"tipo_orden\": \"Orden Final de Facturación\",\r\n  \"consecutivo_orden_informativa\": \"OS 2024 114\",\r\n  \"consecutivo_orden_final\": \"OS 2024 307\",\r\n  \"fecha_orden_informativa\": \"23/04/2024\",\r\n  \"fecha_orden_final\": \"06/06/2024\",\r\n  \"especificaciones_tecnicas\": \"\",\r\n  \"obligaciones_contratado\": \"\",\r\n  \"obligaciones_contratante\": \"\",\r\n  \"condiciones_economicas\": \"\",\r\n  \"observaciones\": \"Certificamos que se ha recibido oferta verbal o escrita para la adquisición del bien y/o servicio requerido expresamente en esta solicitud, que el proveedor seleccionado cumple y acepta las condiciones establecidas por la Empresa para este tipo de órdenes contractuales, que se verificó la razonabilidad del precio ofrecido y que la información suministrada en el presente formato es veráz y corresponde a lo ofertado por el proveedor (a).\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -755,6 +753,111 @@
 							"path": [
 								"api",
 								"ordenes-servicio",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SST",
+			"item": [
+				{
+					"name": "All SST",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/requisitos-personal-sst",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"requisitos-personal-sst"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SST",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre_razon_social\":\"DARCOMEX SAS \",\r\n\r\n    \"cedula_nit\":\"900645671-5\",\r\n\r\n    \"direccion\":\"FCA BELEN VEREDA CANICA BAJA SUBACHOQUE \",\r\n\r\n    \"tel_1\":\"3142378386\",\r\n\r\n    \"tel_2\":\"6012149824\",\r\n\r\n    \"email\":\"info@darcomex.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/requisitos-personal-sst",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"requisitos-personal-sst"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SST by Id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"nombre_razon_social\": \"DARCOMEX SAS\",\r\n    \"cedula_nit\": \"900645671-5\",\r\n    \"direccion\": \"FCA BELEN VEREDA CANICA BAJA SUBACHOQUE \",\r\n    \"tel_1\": \"3142378386\",\r\n    \"tel_2\": \"6012149824\",\r\n    \"email\": \"info@darcomex.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/requisitos-personal-sst/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"requisitos-personal-sst",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SST by Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/requisitos-personal-sst/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"requisitos-personal-sst",
 								"1"
 							]
 						}
