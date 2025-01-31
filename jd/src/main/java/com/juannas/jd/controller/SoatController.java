@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/soats")
+@RequestMapping("/api/v1/soat")
 public class SoatController {
     private final SoatService soatService;
 
@@ -16,12 +16,12 @@ public class SoatController {
         this.soatService = soatService;
     }
 
-    @PostMapping(path = "/create")
+    @PostMapping
     public ResponseEntity<SoatEntity> createSoat(@RequestBody SoatEntity soat) {
         return ResponseEntity.ok(soatService.createSoat(soat));
     }
     // GET ALL
-    @GetMapping(path = "/list")
+    @GetMapping
     public ResponseEntity<List<SoatEntity>> getAllSoats() {
         return ResponseEntity.ok(soatService.getAllSoats());
     }

@@ -10,20 +10,20 @@ import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
 @Service
-public class MaquinaService {
-    private final MaquinaRepository maquinaRepository;
+public class EquipoService {
+    private final EquipoRepository maquinaRepository;
     private final PropietarioRepository propietarioRepository;
     private final ProveedorRepository proveedorRepository;
     private final SoatRepository soatRepository;
     private final ProyectoRepository proyectoRepository; // Check relation
     private final ClienteRepository clienteRepository; // Check relation
 
-    public MaquinaService(MaquinaRepository maquinaRepository,
-                          PropietarioRepository propietarioRepository,
-                          ProveedorRepository proveedorRepository,
-                          SoatRepository soatRepository,
-                          ProyectoRepository proyectoRepository,
-                          ClienteRepository clienteRepository) {
+    public EquipoService(EquipoRepository maquinaRepository,
+                         PropietarioRepository propietarioRepository,
+                         ProveedorRepository proveedorRepository,
+                         SoatRepository soatRepository,
+                         ProyectoRepository proyectoRepository,
+                         ClienteRepository clienteRepository) {
         this.maquinaRepository = maquinaRepository;
         this.propietarioRepository = propietarioRepository;
         this.proveedorRepository = proveedorRepository;
@@ -34,7 +34,7 @@ public class MaquinaService {
 
     // CREATE
     @Transactional
-    public MaquinaEntity createMaquina(MaquinaEntity maquina) {
+    public EquipoEntity createMaquina(EquipoEntity maquina) {
         // Link relationships
         linkPropietario(maquina);
         linkProveedor(maquina);
@@ -43,21 +43,21 @@ public class MaquinaService {
     }
 
     // READ ALL
-    public List<MaquinaEntity> getAllMaquinas() {
+    public List<EquipoEntity> getAllMaquinas() {
         return StreamSupport.stream(maquinaRepository.findAll().spliterator(), false)
                 .collect(Collectors.toList());
     }
 
     // READ BY PLACA
-    public MaquinaEntity getMaquinaByPlaca(String placa) {
+    public EquipoEntity getMaquinaByPlaca(String placa) {
         return maquinaRepository.findByPlaca(placa)
                 .orElseThrow(() -> new RuntimeException("Machine not found"));
     }
 
     // UPDATE BY PLACA
     @Transactional
-    public MaquinaEntity updateMaquinaByPlaca(String placa, MaquinaEntity updatedMaquina) {
-        MaquinaEntity existing = getMaquinaByPlaca(placa);
+    public EquipoEntity updateMaquinaByPlaca(String placa, EquipoEntity updatedMaquina) {
+        EquipoEntity existing = getMaquinaByPlaca(placa);
         existing.setPlaca(updatedMaquina.getPlaca());
         existing.setLinea(updatedMaquina.getLinea());
         existing.setTipoEquipo(updatedMaquina.getTipoEquipo());
@@ -87,7 +87,7 @@ public class MaquinaService {
     }
 
     // HELPER METHODS TO LINK RELATIONSHIPS
-    private void linkPropietario(MaquinaEntity maquina) {
+    private void linkPropietario(EquipoEntity maquina) {
         if (maquina.getPropietario() != null && maquina.getPropietario().getIdentificacion() != null) {
             PropietarioEntity propietario = propietarioRepository.findByIdentificacion(maquina.getPropietario().getIdentificacion())
                     .orElseThrow(() -> new RuntimeException("Propietario not found"));
@@ -96,7 +96,7 @@ public class MaquinaService {
         }
     }
 
-    private void linkProveedor(MaquinaEntity maquina) {
+    private void linkProveedor(EquipoEntity maquina) {
         if (maquina.getProveedor() != null && maquina.getProveedor().getIdentificacion() != null) {
             ProveedorEntity proveedor = proveedorRepository.findByIdentificacion(maquina.getProveedor().getIdentificacion())
                     .orElseThrow(() -> new RuntimeException("Proveedor not found"));
@@ -105,7 +105,7 @@ public class MaquinaService {
         }
     }
 
-    private void linkSoat(MaquinaEntity maquina) {
+    private void linkSoat(EquipoEntity maquina) {
         if (maquina.getSoat() != null && maquina.getSoat().getNumeroPoliza() != null) {
             SoatEntity soat = soatRepository.findByNumeroPoliza(maquina.getSoat().getNumeroPoliza())
                     .orElseThrow(() -> new RuntimeException("SOAT not found"));

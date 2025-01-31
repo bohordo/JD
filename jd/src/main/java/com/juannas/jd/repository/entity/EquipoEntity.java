@@ -13,7 +13,8 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @Entity
-public class MaquinaEntity {
+@Table(name = "equipo")
+public class EquipoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int maquinaId;

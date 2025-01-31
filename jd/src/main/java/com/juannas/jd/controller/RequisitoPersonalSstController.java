@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/requisitos-personal-sst")
+@RequestMapping("/api/v1/requisito-personal-sst")
 public class RequisitoPersonalSstController {
 
     private final RequisitoPersonalSstService requisitoPersonalSstService;

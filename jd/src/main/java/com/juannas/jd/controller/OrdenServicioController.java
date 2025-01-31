@@ -11,7 +11,7 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/ordenes-servicio")
+@RequestMapping("/api/v1/orden-servicio")
 public class OrdenServicioController {
 
     private final OrdenServicioService ordenServicioService;

@@ -1,30 +1,30 @@
 package com.juannas.jd.controller;
 
-import com.juannas.jd.repository.entity.MaquinaEntity;
-import com.juannas.jd.service.MaquinaService;
+import com.juannas.jd.repository.entity.EquipoEntity;
+import com.juannas.jd.service.EquipoService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/maquinas")
-public class MaquinaController {
-    private final MaquinaService maquinaService;
+@RequestMapping("/api/v1/equipo")
+public class EquipoController {
+    private final EquipoService maquinaService;
 
-    public MaquinaController(MaquinaService maquinaService) {
+    public EquipoController(EquipoService maquinaService) {
         this.maquinaService = maquinaService;
     }
 
     // CREATE
-    @PostMapping(path = "/create")
-    public ResponseEntity<MaquinaEntity> createMaquina(@RequestBody MaquinaEntity maquina) {
+    @PostMapping
+    public ResponseEntity<EquipoEntity> createMaquina(@RequestBody EquipoEntity maquina) {
         return ResponseEntity.ok(maquinaService.createMaquina(maquina));
     }
 
     // GET ALL
-    @GetMapping(path = "/list")
-    public ResponseEntity<List<MaquinaEntity>> getAllMaquinas() {
+    @GetMapping
+    public ResponseEntity<List<EquipoEntity>> getAllMaquinas() {
         return ResponseEntity.ok(maquinaService.getAllMaquinas());
     }
 /*
@@ -36,9 +36,9 @@ public class MaquinaController {
 */
     // UPDATE BY PLACA
     @PutMapping("/update/{placa}")
-    public ResponseEntity<MaquinaEntity> updateMaquina(
+    public ResponseEntity<EquipoEntity> updateMaquina(
             @PathVariable String placa,
-            @RequestBody MaquinaEntity updatedMaquina
+            @RequestBody EquipoEntity updatedMaquina
     ) {
         return ResponseEntity.ok(maquinaService.updateMaquinaByPlaca(placa, updatedMaquina));
     }

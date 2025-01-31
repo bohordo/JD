@@ -13,6 +13,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @Entity
+@Table(name = "proyecto")
 public class ProyectoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -45,5 +46,5 @@ public class ProyectoEntity {
     private String objetoGeneral;
 
     @ManyToMany(mappedBy = "proyectos")
-    private List<MaquinaEntity> maquinas = new ArrayList<>();
+    private List<EquipoEntity> maquinas = new ArrayList<>();
 }

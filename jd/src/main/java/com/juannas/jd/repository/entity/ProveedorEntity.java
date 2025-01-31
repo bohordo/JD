@@ -12,6 +12,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @Entity
+@Table(name = "proveedor")
 public class ProveedorEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,5 +21,5 @@ public class ProveedorEntity {
     private String nombre;
     private String tipoIdentificacion;
     @OneToMany(mappedBy = "proveedor", cascade = CascadeType.ALL)
-    private List<MaquinaEntity> maquinas = new ArrayList<>();
+    private List<EquipoEntity> maquinas = new ArrayList<>();
 }

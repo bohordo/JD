@@ -9,19 +9,19 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/proveedores")
+@RequestMapping("/api/v1/proveedor")
 public class ProveedorController {
     private final ProveedorService proveedorService;
 
     public ProveedorController(ProveedorService proveedorService) {
         this.proveedorService = proveedorService;
     }
-    @PostMapping(path = "/create")
+    @PostMapping
     public ResponseEntity<ProveedorEntity> createProveedor(@RequestBody ProveedorEntity proveedor) {
         return ResponseEntity.ok(proveedorService.createProveedor(proveedor));
     }
     // GET ALL
-    @GetMapping(path = "/list")
+    @GetMapping
     public ResponseEntity<List<ProveedorEntity>> getAllProveedores() {
         return ResponseEntity.ok(proveedorService.getAllProveedores());
     }

@@ -1,7 +1,7 @@
 package com.juannas.jd.service;
 
-import com.juannas.jd.repository.entity.MaquinaEntity;
-import com.juannas.jd.repository.MaquinaRepository;
+import com.juannas.jd.repository.entity.EquipoEntity;
+import com.juannas.jd.repository.EquipoRepository;
 import com.juannas.jd.repository.entity.ProyectoEntity;
 import com.juannas.jd.repository.ProyectoRepository;
 import org.springframework.stereotype.Service;
@@ -14,9 +14,9 @@ import java.util.stream.StreamSupport;
 @Service
 public class ProyectoService {
     private final ProyectoRepository proyectoRepository;
-    private final MaquinaRepository maquinaRepository;
+    private final EquipoRepository maquinaRepository;
 
-    public ProyectoService(ProyectoRepository proyectoRepository, MaquinaRepository maquinaRepository) {
+    public ProyectoService(ProyectoRepository proyectoRepository, EquipoRepository maquinaRepository) {
         this.proyectoRepository = proyectoRepository;
         this.maquinaRepository = maquinaRepository;
     }
@@ -57,7 +57,7 @@ public class ProyectoService {
     @Transactional
     public void addMaquinaToProyecto(String proyectoNombre, String maquinaPlaca) {
         ProyectoEntity proyecto = getProyectoByNombre(proyectoNombre);
-        MaquinaEntity maquina = maquinaRepository.findByPlaca(maquinaPlaca)
+        EquipoEntity maquina = maquinaRepository.findByPlaca(maquinaPlaca)
                 .orElseThrow(() -> new RuntimeException("Machine not found"));
 
         proyecto.getMaquinas().add(maquina);
@@ -69,7 +69,7 @@ public class ProyectoService {
     @Transactional
     public void removeMaquinaFromProyecto(String proyectoNombre, String maquinaPlaca) {
         ProyectoEntity proyecto = getProyectoByNombre(proyectoNombre);
-        MaquinaEntity maquina = maquinaRepository.findByPlaca(maquinaPlaca)
+        EquipoEntity maquina = maquinaRepository.findByPlaca(maquinaPlaca)
                 .orElseThrow(() -> new RuntimeException("Machine not found"));
 
         proyecto.getMaquinas().remove(maquina);

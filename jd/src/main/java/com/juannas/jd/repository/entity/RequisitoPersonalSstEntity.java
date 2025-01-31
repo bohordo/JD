@@ -10,6 +10,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @Entity
+@Table(name = "requisito_personal_sst")
 public class RequisitoPersonalSstEntity {
 
     @Id

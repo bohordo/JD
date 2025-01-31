@@ -1,6 +1,6 @@
 package com.juannas.jd.service;
 
-import com.juannas.jd.repository.MaquinaRepository;
+import com.juannas.jd.repository.EquipoRepository;
 import com.juannas.jd.repository.entity.PropietarioEntity;
 import com.juannas.jd.repository.PropietarioRepository;
 import org.springframework.stereotype.Service;
@@ -13,10 +13,10 @@ import java.util.stream.StreamSupport;
 @Service
 public class PropietarioService {
     private final PropietarioRepository propietarioRepository;
-    private final MaquinaRepository maquinaRepository; //Check relation
+    private final EquipoRepository maquinaRepository; //Check relation
 
     public PropietarioService(PropietarioRepository propietarioRepository,
-                              MaquinaRepository maquinaRepository) {
+                              EquipoRepository maquinaRepository) {
         this.propietarioRepository = propietarioRepository;
         this.maquinaRepository = maquinaRepository;
     }

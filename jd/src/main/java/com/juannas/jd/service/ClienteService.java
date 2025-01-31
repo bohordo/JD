@@ -1,7 +1,7 @@
 package com.juannas.jd.service;
 
 import com.juannas.jd.repository.ClienteRepository;
-import com.juannas.jd.repository.MaquinaRepository;
+import com.juannas.jd.repository.EquipoRepository;
 import com.juannas.jd.repository.ProyectoRepository;
 import com.juannas.jd.repository.entity.*;
 import org.springframework.stereotype.Service;
@@ -15,14 +15,14 @@ import java.util.stream.StreamSupport;
 public class ClienteService {
     private final ClienteRepository clienteRepository;
     private final ProyectoRepository proyectoRepository; // Check relation
-    private final MaquinaRepository maquinaRepository;
+    private final EquipoRepository maquinaRepository;
 
     public ClienteService(ClienteRepository clienteRepository,
                           ProyectoRepository proyectoRepository,
-                          MaquinaRepository maquinaRepository) {
+                          EquipoRepository equipoRepository) {
         this.clienteRepository = clienteRepository;
         this.proyectoRepository = proyectoRepository;
-        this.maquinaRepository = maquinaRepository;
+        this.maquinaRepository = equipoRepository;
     }
 
     // CREATE
@@ -62,7 +62,7 @@ public class ClienteService {
     @Transactional
     public void addMaquinaToCliente(String clienteIdentificacion, String maquinaPlaca) {
         ClienteEntity cliente = getClienteByIdentificacion(clienteIdentificacion);
-        MaquinaEntity maquina = maquinaRepository.findByPlaca(maquinaPlaca)
+        EquipoEntity maquina = maquinaRepository.findByPlaca(maquinaPlaca)
                 .orElseThrow(() -> new RuntimeException("Machine not found"));
 
         cliente.getMaquinasAlquiladas().add(maquina);
@@ -74,7 +74,7 @@ public class ClienteService {
     @Transactional
     public void removeMaquinaFromCliente(String clienteIdentificacion, String maquinaPlaca) {
         ClienteEntity cliente = getClienteByIdentificacion(clienteIdentificacion);
-        MaquinaEntity maquina = maquinaRepository.findByPlaca(maquinaPlaca)
+        EquipoEntity maquina = maquinaRepository.findByPlaca(maquinaPlaca)
                 .orElseThrow(() -> new RuntimeException("Machine not found"));
 
         cliente.getMaquinasAlquiladas().remove(maquina);

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/clientes")
+@RequestMapping("/api/v1/cliente")
 public class ClienteController {
     private final ClienteService clienteService;
 
@@ -17,13 +17,13 @@ public class ClienteController {
     }
 
     // CREATE
-    @PostMapping(path = "/create")
+    @PostMapping
     public ResponseEntity<ClienteEntity> createCliente(@RequestBody ClienteEntity cliente) {
         return ResponseEntity.ok(clienteService.createCliente(cliente));
     }
 
     // GET ALL
-    @GetMapping(path = "/list")
+    @GetMapping
     public ResponseEntity<List<ClienteEntity>> getAllClientes() {
         return ResponseEntity.ok(clienteService.getAllClientes());
     }

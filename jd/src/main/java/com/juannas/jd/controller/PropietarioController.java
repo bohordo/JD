@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/propietarios")
+@RequestMapping("/api/v1/propietario")
 public class PropietarioController {
     private final PropietarioService propietarioService;
 
@@ -16,12 +16,12 @@ public class PropietarioController {
         this.propietarioService = propietarioService;
     }
 
-    @PostMapping(path = "/create")
+    @PostMapping
     public ResponseEntity<PropietarioEntity> createPropietario(@RequestBody PropietarioEntity propietario) {
         return ResponseEntity.ok(propietarioService.createPropietario(propietario));
     }
 
-    @GetMapping(path = "/list")
+    @GetMapping
     public ResponseEntity<List<PropietarioEntity>> getAllPropietarios() {
         return ResponseEntity.ok(propietarioService.getAllPropietarios());
     }

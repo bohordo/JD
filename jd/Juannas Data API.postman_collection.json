@@ -1,8 +1,10 @@
 {
 	"info": {
-		"_postman_id": "1195d92f-4640-4977-b1cc-211cfa8c0d85",
+		"_postman_id": "191fa962-2328-4a9e-b69c-194d38310d99",
 		"name": "Juannas Data API",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19902240",
+		"_collection_link": "https://lunar-meadow-13618.postman.co/workspace/My-Workspace~e2675eed-1af3-4559-884f-f9dc1ff33e30/collection/19902240-191fa962-2328-4a9e-b69c-194d38310d99?action=share&source=collection_link&creator=19902240"
 	},
 	"item": [
 		{
@@ -14,15 +16,16 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/clientes/list",
+							"raw": "http://localhost:8081/api/v1/cliente",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8081",
 							"path": [
-								"clientes",
-								"list"
+								"api",
+								"v1",
+								"cliente"
 							]
 						}
 					},
@@ -43,15 +46,16 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8081/clientes/create",
+							"raw": "http://localhost:8081/api/v1/cliente",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8081",
 							"path": [
-								"clientes",
-								"create"
+								"api",
+								"v1",
+								"cliente"
 							]
 						}
 					},
@@ -72,14 +76,16 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8081/clientes/update/1020",
+							"raw": "http://localhost:8081/api/v1/cliente/update/1020",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8081",
 							"path": [
-								"clientes",
+								"api",
+								"v1",
+								"cliente",
 								"update",
 								"1020"
 							]
@@ -93,14 +99,16 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/clientes/delete/1020",
+							"raw": "http://localhost:8081/api/v1/cliente/delete/1020",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8081",
 							"path": [
-								"clientes",
+								"api",
+								"v1",
+								"cliente",
 								"delete",
 								"1020"
 							]
@@ -111,7 +119,7 @@
 			]
 		},
 		{
-			"name": "Maquina",
+			"name": "Equipo",
 			"item": [
 				{
 					"name": "SOAT",
@@ -122,15 +130,16 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8081/soats/list",
+									"raw": "http://localhost:8081/api/v1/soat",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "8081",
 									"path": [
-										"soats",
-										"list"
+										"api",
+										"v1",
+										"soat"
 									]
 								}
 							},
@@ -151,15 +160,16 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8081/soats/create",
+									"raw": "http://localhost:8081/api/v1/soat",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "8081",
 									"path": [
-										"soats",
-										"create"
+										"api",
+										"v1",
+										"soat"
 									]
 								}
 							},
@@ -180,14 +190,16 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8081/soats/update/123",
+									"raw": "http://localhost:8081/api/v1/soat/update/123",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "8081",
 									"path": [
-										"soats",
+										"api",
+										"v1",
+										"soat",
 										"update",
 										"123"
 									]
@@ -201,14 +213,16 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8081/soats/delete/123",
+									"raw": "http://localhost:8081/api/v1/soat/delete/123",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "8081",
 									"path": [
-										"soats",
+										"api",
+										"v1",
+										"soat",
 										"delete",
 										"123"
 									]
@@ -219,20 +233,21 @@
 					]
 				},
 				{
-					"name": "Maquina List",
+					"name": "Equipo List",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/maquinas/list",
+							"raw": "http://localhost:8081/api/v1/equipo",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8081",
 							"path": [
-								"maquinas",
-								"list"
+								"api",
+								"v1",
+								"equipo"
 							]
 						}
 					},
@@ -253,15 +268,16 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8081/maquinas/create",
+							"raw": "http://localhost:8081/api/v1/equipo",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8081",
 							"path": [
-								"maquinas",
-								"create"
+								"api",
+								"v1",
+								"equipo"
 							]
 						}
 					},
@@ -282,14 +298,16 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8081/maquinas/update/431",
+							"raw": "http://localhost:8081/api/v1/equipo/update/431",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8081",
 							"path": [
-								"maquinas",
+								"api",
+								"v1",
+								"equipo",
 								"update",
 								"431"
 							]
@@ -312,14 +330,16 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8081/maquinas/delete/123213213213",
+							"raw": "http://localhost:8081/api/v1/equipo/delete/123213213213",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8081",
 							"path": [
-								"maquinas",
+								"api",
+								"v1",
+								"equipo",
 								"delete",
 								"123213213213"
 							]
@@ -338,15 +358,16 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/propietarios/list",
+							"raw": "http://localhost:8081/api/v1/propietario",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8081",
 							"path": [
-								"propietarios",
-								"list"
+								"api",
+								"v1",
+								"propietario"
 							]
 						}
 					},
@@ -367,15 +388,16 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8081/propietarios/create",
+							"raw": "http://localhost:8081/api/v1/propietario",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8081",
 							"path": [
-								"propietarios",
-								"create"
+								"api",
+								"v1",
+								"propietario"
 							]
 						}
 					},
@@ -396,14 +418,16 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8081/propietarios/update/1020",
+							"raw": "http://localhost:8081/api/v1/propietario/update/1020",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8081",
 							"path": [
-								"propietarios",
+								"api",
+								"v1",
+								"propietario",
 								"update",
 								"1020"
 							]
@@ -417,14 +441,16 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/propietarios/delete/1020",
+							"raw": "http://localhost:8081/api/v1/propietario/delete/1020",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8081",
 							"path": [
-								"propietarios",
+								"api",
+								"v1",
+								"propietario",
 								"delete",
 								"1020"
 							]
@@ -443,15 +469,16 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/proveedores/list",
+							"raw": "http://localhost:8081/api/v1/proveedor",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8081",
 							"path": [
-								"proveedores",
-								"list"
+								"api",
+								"v1",
+								"proveedor"
 							]
 						}
 					},
@@ -472,15 +499,16 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8081/proveedores/create",
+							"raw": "http://localhost:8081/api/v1/proveedor",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8081",
 							"path": [
-								"proveedores",
-								"create"
+								"api",
+								"v1",
+								"proveedor"
 							]
 						}
 					},
@@ -501,14 +529,16 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8081/proveedores/update/1020",
+							"raw": "http://localhost:8081/api/v1/proveedor/update/1020",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8081",
 							"path": [
-								"proveedores",
+								"api",
+								"v1",
+								"proveedor",
 								"update",
 								"1020"
 							]
@@ -522,14 +552,16 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/proveedores/delete/1020",
+							"raw": "http://localhost:8081/api/v1/proveedor/delete/1020",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8081",
 							"path": [
-								"proveedores",
+								"api",
+								"v1",
+								"proveedor",
 								"delete",
 								"1020"
 							]
@@ -548,15 +580,16 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/proyectos/list",
+							"raw": "http://localhost:8081/api/v1/proyecto",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8081",
 							"path": [
-								"proyectos",
-								"list"
+								"api",
+								"v1",
+								"proyecto"
 							]
 						}
 					},
@@ -580,15 +613,16 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8081/proyectos/create",
+							"raw": "http://localhost:8081/api/v1/proyecto",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8081",
 							"path": [
-								"proyectos",
-								"create"
+								"api",
+								"v1",
+								"proyecto"
 							]
 						}
 					},
@@ -609,16 +643,18 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8081/proyectos/update/Proyecto 1",
+							"raw": "http://localhost:8081/api/v1/proyecto/update/CONCONCRETO METRO LINEA ",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8081",
 							"path": [
-								"proyectos",
+								"api",
+								"v1",
+								"proyecto",
 								"update",
-								"Proyecto 1"
+								"CONCONCRETO METRO LINEA "
 							]
 						}
 					},
@@ -630,16 +666,18 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/proyectos/delete/Proyecto1",
+							"raw": "http://localhost:8081/api/v1/proyecto/delete/CONCONCRETO METRO LINEA ",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8081",
 							"path": [
-								"proyectos",
+								"api",
+								"v1",
+								"proyecto",
 								"delete",
-								"Proyecto1"
+								"CONCONCRETO METRO LINEA "
 							]
 						}
 					},
@@ -656,7 +694,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/api/ordenes-servicio",
+							"raw": "http://localhost:8081/api/v1/orden-servicio",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -664,7 +702,8 @@
 							"port": "8081",
 							"path": [
 								"api",
-								"ordenes-servicio"
+								"v1",
+								"orden-servicio"
 							]
 						}
 					},
@@ -677,7 +716,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"tipo_orden\": \"Orden Final de Facturación\",\r\n  \"consecutivo_orden_informativa\": \"OS 2024 114\",\r\n  \"consecutivo_orden_final\": \"OS 2024 307\",\r\n  \"fecha_orden_informativa\": \"23/04/2024\",\r\n  \"fecha_orden_final\": \"06/06/2024\",\r\n  \"especificaciones_tecnicas\": \"\",\r\n  \"obligaciones_contratado\": \"\",\r\n  \"obligaciones_contratante\": \"\",\r\n  \"condiciones_economicas\": \"\",\r\n  \"observaciones\": \"Certificamos que se ha recibido oferta verbal o escrita para la adquisición del bien y/o servicio requerido expresamente en esta solicitud, que el proveedor seleccionado cumple y acepta las condiciones establecidas por la Empresa para este tipo de órdenes contractuales, que se verificó la razonabilidad del precio ofrecido y que la información suministrada en el presente formato es veráz y corresponde a lo ofertado por el proveedor (a).\"\r\n}",
+							"raw": "{\r\n  \"tipo_orden\": \"Orden Final de Facturación\",\r\n  \"consecutivo_orden_informativa\": \"OS 2024 114\",\r\n  \"consecutivo_orden_final\": \"OS 2024 307\",\r\n  \"fecha_orden_informativa\": \"\",\r\n  \"fecha_orden_final\": \"\",\r\n  \"especificaciones_tecnicas\": \"\",\r\n  \"obligaciones_contratado\": \"\",\r\n  \"obligaciones_contratante\": \"\",\r\n  \"condiciones_economicas\": \"\",\r\n  \"observaciones\": \"Certificamos que se ha recibido oferta verbal o escrita para la adquisición del bien y/o servicio requerido expresamente en esta solicitud, que el proveedor seleccionado cumple y acepta las condiciones establecidas por la Empresa para este tipo de órdenes contractuales, que se verificó la razonabilidad del precio ofrecido y que la información suministrada en el presente formato es veráz y corresponde a lo ofertado por el proveedor (a).\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -685,7 +724,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8081/api/ordenes-servicio",
+							"raw": "http://localhost:8081/api/v1/orden-servicio",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -693,7 +732,8 @@
 							"port": "8081",
 							"path": [
 								"api",
-								"ordenes-servicio"
+								"v1",
+								"orden-servicio"
 							]
 						}
 					},
@@ -714,7 +754,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8081/api/ordenes-servicio/1",
+							"raw": "http://localhost:8081/api/v1/orden-servicio/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -722,7 +762,8 @@
 							"port": "8081",
 							"path": [
 								"api",
-								"ordenes-servicio",
+								"v1",
+								"orden-servicio",
 								"1"
 							]
 						}
@@ -744,7 +785,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8081/api/ordenes-servicio/1",
+							"raw": "http://localhost:8081/api/v1/orden-servicio/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -752,7 +793,8 @@
 							"port": "8081",
 							"path": [
 								"api",
-								"ordenes-servicio",
+								"v1",
+								"orden-servicio",
 								"1"
 							]
 						}
@@ -770,7 +812,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/api/requisitos-personal-sst",
+							"raw": "http://localhost:8081/api/v1/requisito-personal-sst",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -778,7 +820,8 @@
 							"port": "8081",
 							"path": [
 								"api",
-								"requisitos-personal-sst"
+								"v1",
+								"requisito-personal-sst"
 							]
 						}
 					},
@@ -799,7 +842,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8081/api/requisitos-personal-sst",
+							"raw": "http://localhost:8081/api/v1/requisito-personal-sst",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -807,7 +850,8 @@
 							"port": "8081",
 							"path": [
 								"api",
-								"requisitos-personal-sst"
+								"v1",
+								"requisito-personal-sst"
 							]
 						}
 					},
@@ -828,7 +872,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8081/api/requisitos-personal-sst/1",
+							"raw": "http://localhost:8081/api/v1/requisito-personal-sst/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -836,7 +880,8 @@
 							"port": "8081",
 							"path": [
 								"api",
-								"requisitos-personal-sst",
+								"v1",
+								"requisito-personal-sst",
 								"1"
 							]
 						}
@@ -849,7 +894,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/api/requisitos-personal-sst/1",
+							"raw": "http://localhost:8081/api/v1/requisito-personal-sst/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -857,7 +902,8 @@
 							"port": "8081",
 							"path": [
 								"api",
-								"requisitos-personal-sst",
+								"v1",
+								"requisito-personal-sst",
 								"1"
 							]
 						}
