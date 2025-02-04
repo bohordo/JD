@@ -20,14 +20,15 @@ services:
       dockerfile: Dockerfile
     container_name: java_app_container
     restart: always
+    depends_on:
+      - mariadb
     ports:
       - "8081:8081"
     environment:
+      SERVER_PORT: 8081
       SPRING_DATASOURCE_URL: jdbc:mariadb://mariadb:3306/jd
       SPRING_DATASOURCE_USERNAME: user
       SPRING_DATASOURCE_PASSWORD: password
-    depends_on:
-      - mariadb
 
 volumes:
   mariadb_data:

@@ -1,30 +1,23 @@
-# Stage 1: Install MariaDB
-FROM mariadb:latest AS mariadb
-ENV MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
-ENV MYSQL_DATABASE=${MYSQL_DATABASE}
-ENV MYSQL_USER=${MYSQL_USER}
-ENV MYSQL_PASSWORD=${MYSQL_PASSWORD}
-
-# Esperar unos segundos para asegurarse de que MariaDB esté listo
-HEALTHCHECK CMD mysqladmin ping -h localhost --silent || exit 1
-
-# Stage 2: Build Java Application
-FROM maven:3.8.5-openjdk-17 AS build
+# Stage 1: Build the application using Maven.
+FROM maven:3.8.5-openjdk-11-slim AS build
 WORKDIR /app
+
+# Copy pom.xml and download dependencies
 COPY pom.xml .
 RUN mvn dependency:go-offline
+
+# Copy the source code and build the jar.
 COPY src ./src
 RUN mvn package -DskipTests
 
-# Stage 3: Combine both
-FROM mariadb:latest
+# Stage 2: Create the final image with the built jar.
+FROM openjdk:11-jre-slim
+WORKDIR /app
+# Adjust the path to your jar file if needed.
+COPY --from=build /app/target/*.jar app.jar
 
-# Copiar la aplicación Java
-COPY --from=build /app/target/*.jar /usr/local/bin/app.jar
-
-# Expose ports
+# Expose the port that the app listens on.
 EXPOSE ${SERVER_PORT:-8081}
-EXPOSE 3306
 
-# Start both services
-CMD ["sh", "-c", "mysqld & java -jar /usr/local/bin/app.jar"]
+# Run the application.
+ENTRYPOINT ["java", "-jar", "app.jar"]
