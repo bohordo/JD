@@ -26,7 +26,7 @@ COPY --from=build /app/target/*.jar app.jar
 
 # Expose ports
 EXPOSE ${SERVER_PORT:-8081}
-EXPOSE ${SERVER_PORT:-3306}
+EXPOSE 3306
 
 # Start both services
 CMD service mysql start && java -jar app.jar
