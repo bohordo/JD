@@ -29,4 +29,4 @@ EXPOSE ${SERVER_PORT:-8081}
 EXPOSE 3306
 
 # Start both services
-CMD service mysql start && java -jar app.jar
+CMD ["sh", "-c", "mysqld_safe & java -jar app.jar"]
