@@ -41,7 +41,7 @@ public class ProveedorService {
     public ProveedorEntity updateProveedor(String identificacion,
                                            ProveedorEntity updatedProveedor) {
         ProveedorEntity existing = getProveedorByIdentificacion(identificacion);
-        existing.setNombre(updatedProveedor.getNombre());
+        existing.setNombreRazonSocial(updatedProveedor.getNombreRazonSocial());
         existing.setTipoIdentificacion(updatedProveedor.getTipoIdentificacion());
         return proveedorRepository.save(existing);
     }
