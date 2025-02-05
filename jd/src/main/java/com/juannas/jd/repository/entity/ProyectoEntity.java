@@ -6,8 +6,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.ArrayList;
-import java.util.List;
 
 @Getter
 @Setter
@@ -15,6 +13,7 @@ import java.util.List;
 @Entity
 @Table(name = "proyecto")
 public class ProyectoEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int proyectoId;
@@ -44,7 +43,4 @@ public class ProyectoEntity {
     @Column(name = "objeto_general",columnDefinition="LONGTEXT")
     @JsonProperty("objeto_general")
     private String objetoGeneral;
-
-    @ManyToMany(mappedBy = "proyectos")
-    private List<EquipoEntity> maquinas = new ArrayList<>();
 }

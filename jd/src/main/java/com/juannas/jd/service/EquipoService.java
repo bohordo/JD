@@ -101,7 +101,7 @@ public class EquipoService {
             ProveedorEntity proveedor = proveedorRepository.findByIdentificacion(maquina.getProveedor().getIdentificacion())
                     .orElseThrow(() -> new RuntimeException("Proveedor not found"));
             maquina.setProveedor(proveedor);
-            proveedor.getMaquinas().add(maquina);
+            //proveedor.getMaquinas().add(maquina);
         }
     }
 

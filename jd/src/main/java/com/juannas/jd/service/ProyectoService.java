@@ -60,7 +60,7 @@ public class ProyectoService {
         EquipoEntity maquina = maquinaRepository.findByPlaca(maquinaPlaca)
                 .orElseThrow(() -> new RuntimeException("Machine not found"));
 
-        proyecto.getMaquinas().add(maquina);
+        //proyecto.getEquipos().add(maquina);
         maquina.getProyectos().add(proyecto);
         maquinaRepository.save(maquina);
     }
@@ -72,7 +72,7 @@ public class ProyectoService {
         EquipoEntity maquina = maquinaRepository.findByPlaca(maquinaPlaca)
                 .orElseThrow(() -> new RuntimeException("Machine not found"));
 
-        proyecto.getMaquinas().remove(maquina);
+        //proyecto.getEquipos().remove(maquina);
         maquina.getProyectos().remove(proyecto);
         maquinaRepository.save(maquina);
     }
