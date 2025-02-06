@@ -65,8 +65,8 @@ public class ClienteService {
         EquipoEntity maquina = maquinaRepository.findByPlaca(maquinaPlaca)
                 .orElseThrow(() -> new RuntimeException("Machine not found"));
 
-        cliente.getMaquinasAlquiladas().add(maquina);
-        maquina.getClientes().add(cliente);
+        //cliente.getMaquinasAlquiladas().add(maquina);
+        //maquina.getClientes().add(cliente);
         maquinaRepository.save(maquina);
     }
 
@@ -77,8 +77,8 @@ public class ClienteService {
         EquipoEntity maquina = maquinaRepository.findByPlaca(maquinaPlaca)
                 .orElseThrow(() -> new RuntimeException("Machine not found"));
 
-        cliente.getMaquinasAlquiladas().remove(maquina);
-        maquina.getClientes().remove(cliente);
+        //cliente.getMaquinasAlquiladas().remove(maquina);
+        //maquina.getClientes().remove(cliente);
         maquinaRepository.save(maquina);
     }
 }

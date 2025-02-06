@@ -28,6 +28,6 @@ public class ClienteEntity {
     @ManyToMany(fetch = FetchType.LAZY)
     private List<ProyectoEntity> proyectos = new ArrayList<>();
 
-    @ManyToMany(mappedBy = "clientes", cascade = CascadeType.ALL)
-    private List<EquipoEntity> maquinasAlquiladas = new ArrayList<>();
+    //@ManyToMany(mappedBy = "clientes", cascade = CascadeType.ALL)
+    //private List<EquipoEntity> maquinasAlquiladas = new ArrayList<>();
 }

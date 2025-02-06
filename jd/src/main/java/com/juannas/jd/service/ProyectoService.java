@@ -61,7 +61,7 @@ public class ProyectoService {
                 .orElseThrow(() -> new RuntimeException("Machine not found"));
 
         //proyecto.getEquipos().add(maquina);
-        maquina.getProyectos().add(proyecto);
+        //maquina.getProyectos().add(proyecto);
         maquinaRepository.save(maquina);
     }
 
@@ -73,7 +73,7 @@ public class ProyectoService {
                 .orElseThrow(() -> new RuntimeException("Machine not found"));
 
         //proyecto.getEquipos().remove(maquina);
-        maquina.getProyectos().remove(proyecto);
+        //maquina.getProyectos().remove(proyecto);
         maquinaRepository.save(maquina);
     }
 }

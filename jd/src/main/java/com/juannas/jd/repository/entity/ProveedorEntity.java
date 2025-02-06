@@ -22,8 +22,8 @@ public class ProveedorEntity {
     @JsonProperty("nombre_razon_social")
     private String nombreRazonSocial;
 
-    @Column(name = "tipo_Identificacion")
-    @JsonProperty("tipo_Identificacion")
+    @Column(name = "tipo_identificacion")
+    @JsonProperty("tipo_identificacion")
     private String tipoIdentificacion;
 
     @Column(name = "identificacion")

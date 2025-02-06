@@ -17,7 +17,7 @@ public class OrdenServicioInformativaDto {
     private String nombreProyecto;
 
     @JsonProperty("especificaciones_tecnicas")
-    private String especificaciones_tecnicas;
+    private EspecificacionesTecnicasDto especificacionesTecnicasDto;
 
     @JsonProperty("observaciones")
     private String observaciones;

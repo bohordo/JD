@@ -36,9 +36,9 @@ public class EquipoService {
     @Transactional
     public EquipoEntity createMaquina(EquipoEntity maquina) {
         // Link relationships
-        linkPropietario(maquina);
-        linkProveedor(maquina);
-        linkSoat(maquina);
+        //linkPropietario(maquina);
+        //linkProveedor(maquina);
+        //linkSoat(maquina);
         return maquinaRepository.save(maquina);
     }
 
@@ -59,24 +59,24 @@ public class EquipoService {
     public EquipoEntity updateMaquinaByPlaca(String placa, EquipoEntity updatedMaquina) {
         EquipoEntity existing = getMaquinaByPlaca(placa);
         existing.setPlaca(updatedMaquina.getPlaca());
-        existing.setLinea(updatedMaquina.getLinea());
+        //existing.setLinea(updatedMaquina.getLinea());
         existing.setTipoEquipo(updatedMaquina.getTipoEquipo());
-        existing.setModelo(updatedMaquina.getModelo());
-        existing.setColor(updatedMaquina.getColor());
-        existing.setKilometros(updatedMaquina.getKilometros());
-        existing.setHorometro(updatedMaquina.getHorometro());
-        existing.setAccesorios(updatedMaquina.getAccesorios());
-        existing.setManifestoImportacion(updatedMaquina.getManifestoImportacion());
-        existing.setPoliza(updatedMaquina.getPoliza());
-        existing.setRtm(updatedMaquina.getRtm());
-        existing.setMotor(updatedMaquina.getMotor());
-        existing.setVinChasis(updatedMaquina.getVinChasis());
-        existing.setMarca(updatedMaquina.getMarca());
+        //existing.setModelo(updatedMaquina.getModelo());
+        //existing.setColor(updatedMaquina.getColor());
+        //existing.setKilometros(updatedMaquina.getKilometros());
+        //existing.setHorometro(updatedMaquina.getHorometro());
+        //existing.setAccesorios(updatedMaquina.getAccesorios());
+        //existing.setManifestoImportacion(updatedMaquina.getManifestoImportacion());
+        //existing.setPoliza(updatedMaquina.getPoliza());
+        //existing.setRtm(updatedMaquina.getRtm());
+        //existing.setMotor(updatedMaquina.getMotor());
+        //existing.setVinChasis(updatedMaquina.getVinChasis());
+        //existing.setMarca(updatedMaquina.getMarca());
 
         // Update relationships
-        linkPropietario(existing);
-        linkProveedor(existing);
-        linkSoat(existing);
+        //linkPropietario(existing);
+        //linkProveedor(existing);
+        //linkSoat(existing);
         return maquinaRepository.save(existing);
     }
 
@@ -87,6 +87,7 @@ public class EquipoService {
     }
 
     // HELPER METHODS TO LINK RELATIONSHIPS
+    /*
     private void linkPropietario(EquipoEntity maquina) {
         if (maquina.getPropietario() != null && maquina.getPropietario().getIdentificacion() != null) {
             PropietarioEntity propietario = propietarioRepository.findByIdentificacion(maquina.getPropietario().getIdentificacion())
@@ -95,7 +96,8 @@ public class EquipoService {
             propietario.getMaquinas().add(maquina);
         }
     }
-
+    */
+    /*
     private void linkProveedor(EquipoEntity maquina) {
         if (maquina.getProveedor() != null && maquina.getProveedor().getIdentificacion() != null) {
             ProveedorEntity proveedor = proveedorRepository.findByIdentificacion(maquina.getProveedor().getIdentificacion())
@@ -104,7 +106,8 @@ public class EquipoService {
             //proveedor.getMaquinas().add(maquina);
         }
     }
-
+    */
+    /*
     private void linkSoat(EquipoEntity maquina) {
         if (maquina.getSoat() != null && maquina.getSoat().getNumeroPoliza() != null) {
             SoatEntity soat = soatRepository.findByNumeroPoliza(maquina.getSoat().getNumeroPoliza())
@@ -112,4 +115,5 @@ public class EquipoService {
             maquina.setSoat(soat);
         }
     }
+    */
 }

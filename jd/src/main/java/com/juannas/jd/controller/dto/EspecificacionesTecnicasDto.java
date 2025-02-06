@@ -1,0 +1,30 @@
+package com.juannas.jd.controller.dto;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+public class EspecificacionesTecnicasDto {
+
+    @JsonProperty("placa")
+    private String placa;
+
+    @JsonProperty("descuento_combustible")
+    private String descuentoCombustible;
+
+    @JsonProperty("horas")
+    private String horas;
+
+    @JsonProperty("hora_inicial")
+    private String horaInicial;
+
+    @JsonProperty("hora_final")
+    private String horaFinal;
+
+    @JsonProperty("periodo")
+    private String periodo;
+}

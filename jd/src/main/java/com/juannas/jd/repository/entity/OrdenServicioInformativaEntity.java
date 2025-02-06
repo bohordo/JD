@@ -43,9 +43,10 @@ public class OrdenServicioInformativaEntity {
     @JsonProperty("proveedor")
     private ProveedorEntity proveedorEntity;
 
-    @Column(name = "especificaciones_tecnicas")
-    @JsonProperty("especificaciones_tecnicas")
-    private String especificacionesTecnicas;//Esto debe ser un objeto
+    @OneToOne
+    @JoinColumn(name = "bienes_servicios_id", referencedColumnName = "bienesServiciosId") // Columna de la FK
+    @JsonProperty("bienes_servicios")
+    private BienesServiciosEntity bienesServiciosEntity;
 
     @Column(name = "obligaciones_contratado")
     @JsonProperty("obligaciones_contratado")

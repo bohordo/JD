@@ -2,14 +2,15 @@ package com.juannas.jd.service;
 
 import com.juannas.jd.controller.dto.OrdenServicioInformativaDto;
 import com.juannas.jd.enums.TipoOrdenServicio;
+import com.juannas.jd.repository.BienesServiciosRepository;
+import com.juannas.jd.repository.EquipoRepository;
 import com.juannas.jd.repository.OrdenServicioRepository;
-import com.juannas.jd.repository.entity.OrdenServicioInformativaEntity;
-import com.juannas.jd.repository.entity.ProveedorEntity;
-import com.juannas.jd.repository.entity.ProyectoEntity;
+import com.juannas.jd.repository.entity.*;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -26,6 +27,14 @@ public class OrdenServicioService {
     @Autowired
     private ProveedorService proveedorService;
 
+    @Autowired
+    private EquipoService equipoService;
+
+    @Autowired
+    BienesServiciosRepository bienesServiciosRepository;
+
+    @Autowired
+    EquipoRepository equipoRepository;
 
     @Autowired
     public OrdenServicioService(OrdenServicioRepository ordenServicioRepository) {
@@ -46,7 +55,8 @@ public class OrdenServicioService {
     }
 
     public OrdenServicioInformativaEntity saveSOI(OrdenServicioInformativaDto ordenServicioInformativaDto) {
-        OrdenServicioInformativaEntity osi= new OrdenServicioInformativaEntity();;
+        OrdenServicioInformativaEntity osi= new OrdenServicioInformativaEntity();
+        EquipoEntity equipoEntity = new EquipoEntity();
 
         //Set TipoOrdenServicio
         osi.setTipoOrdenServicio(TipoOrdenServicio.INFORMATIVA);
@@ -62,18 +72,37 @@ public class OrdenServicioService {
         ProyectoEntity proyectoEntity = proyectoService.getProyectoByNombre(ordenServicioInformativaDto.getNombreProyecto());
         osi.setProyectoEntity(proyectoEntity);
 
-        //Create Bienes y Servicios
+        equipoEntity.setHoraInicial(ordenServicioInformativaDto.getEspecificacionesTecnicasDto().getHoraInicial());
+        equipoEntity.setHoraFinal(ordenServicioInformativaDto.getEspecificacionesTecnicasDto().getHoraFinal());
+        equipoEntity.setPeriodo(ordenServicioInformativaDto.getEspecificacionesTecnicasDto().getPeriodo());
+
+        //Query Bienes y Servicios
+        equipoEntity = equipoService.getMaquinaByPlaca(ordenServicioInformativaDto.getEspecificacionesTecnicasDto().getPlaca());
+
+        BienesServiciosEntity bienesServiciosEntity = new BienesServiciosEntity();
+        bienesServiciosEntity.setDetalle(equipoEntity.getTipoEquipo()+" "+equipoEntity.getPlaca()+" "+equipoEntity.getHoraInicial()+" "+equipoEntity.getHoraFinal()+" "+equipoEntity.getPeriodo());
+        bienesServiciosEntity.setEquipos(new ArrayList<>());
+        bienesServiciosEntity.getEquipos().add(equipoEntity);
 
         //Calculate Bienes y Servicios
+
+
+
+        //Cantidad * Valor Unitario
+        int valorUnitario = Integer.parseInt(equipoEntity.getValorUnitario());
+        int cantidad = Integer.parseInt(ordenServicioInformativaDto.getEspecificacionesTecnicasDto().getHoras());
+        int setTotalMasIVA = valorUnitario*cantidad;
+        bienesServiciosEntity.setTotalMasIVA(setTotalMasIVA+"");
+
+        osi.setBienesServiciosEntity(bienesServiciosEntity);
 
         //Add Observaciones
         osi.setObservaciones(ordenServicioInformativaDto.getObservaciones());
 
+        equipoRepository.save(equipoEntity);
+        bienesServiciosRepository.save(bienesServiciosEntity);
         return ordenServicioRepository.save(osi);
     }
-
-
-
 
     public OrdenServicioInformativaEntity update(int id, OrdenServicioInformativaEntity updatedOrdenServicio) {
         return ordenServicioRepository.findById(id)

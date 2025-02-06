@@ -5,21 +5,20 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Getter
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "propietario")
-public class PropietarioEntity {
+@Table(name = "empleado")
+public class EmpleadoEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int propietarioId;
-    private String identificacion;
+    private int empleadoId;
+
     private String nombre;
+
+    private String identificacion;
+
     private String tipoIdentificacion;
-    //@OneToMany(mappedBy = "propietario", cascade = CascadeType.ALL)
-    //private List<EquipoEntity> maquinas = new ArrayList<>();
 }

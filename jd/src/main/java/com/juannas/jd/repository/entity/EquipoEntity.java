@@ -1,5 +1,6 @@
 package com.juannas.jd.repository.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,31 +16,30 @@ import java.util.List;
 @Entity
 @Table(name = "equipo")
 public class EquipoEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int maquinaId;
-    @ManyToMany(fetch = FetchType.LAZY)
-    private List<ClienteEntity> clientes;
-    @ManyToMany(fetch = FetchType.LAZY)
-    private List<ProyectoEntity> proyectos;
+    private int equipoId;
+
     private String placa;
-    private String linea;
+
     private String tipoEquipo;
-    private long modelo;
-    private String color;
-    private long kilometros;
-    private long horometro;
-    private String accesorios;
-    private String manifestoImportacion;
-    @OneToOne(cascade = CascadeType.ALL)
-    private SoatEntity soat;
-    private LocalDate poliza;
-    @ManyToOne(fetch = FetchType.LAZY)
-    private PropietarioEntity propietario;
-    @ManyToOne(fetch = FetchType.LAZY)
-    private ProveedorEntity proveedor;
-    private LocalDate rtm;
-    private String motor;
-    private String vinChasis;
-    private String marca;
+
+    private String horaInicial;
+
+    private String horaFinal;
+
+    private String periodo;
+
+    @Column(name = "unidad_medida")
+    @JsonProperty("unidad_medida")
+    private String unidadMedida;
+
+    @Column(name = "valor_unitario")
+    @JsonProperty("valor_unitario")
+    private String valorUnitario;
+
+    @ManyToOne
+    @JoinColumn(name = "bienes_servicios_id") // Clave foránea en la tabla EquipoEntity
+    private BienesServiciosEntity bienesServicios;
 }
