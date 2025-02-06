@@ -1,21 +1,22 @@
-# Stage 1: Build the application using Maven.
-FROM maven:3.8.5-openjdk-17-slim AS build
+# Stage 1: Build using lightweight Maven image
+FROM maven:3.8.5-eclipse-temurin-17-alpine AS build
 WORKDIR /app
 
-# Copy pom.xml and download dependencies
+# Cache dependencies first
 COPY pom.xml .
-RUN mvn dependency:go-offline
+RUN mvn -B dependency:go-offline --fail-never
 
-# Copy the source code and build the jar.
+# Build application
 COPY src ./src
-RUN mvn package -DskipTests
+RUN mvn -B package -DskipTests
 
-# Clean up unnecessary files (Maven cache, etc.)
-RUN rm -rf /root/.m2
-
-# Stage 2: Create the final image with the built jar.
-FROM eclipse-temurin:17-jre-slim
+# Stage 2: Minimal runtime image
+FROM eclipse-temurin:17-jre-alpine
 WORKDIR /app
+
+# Copy built jar
+COPY --from=build /app/target/*.jar app.jar
+
 # Adjust the path to your jar file if needed.
 COPY --from=build /app/target/*.jar app.jar
 
