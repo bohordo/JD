@@ -1,5 +1,5 @@
 # Stage 1: Build the application using Maven.
-FROM maven:3.8.5-eclipse-temurin-17 AS build
+FROM maven:3.8.5-openjdk-17-slim AS build
 WORKDIR /app
 
 # Copy pom.xml and download dependencies
@@ -10,8 +10,11 @@ RUN mvn dependency:go-offline
 COPY src ./src
 RUN mvn package -DskipTests
 
+# Clean up unnecessary files (Maven cache, etc.)
+RUN rm -rf /root/.m2
+
 # Stage 2: Create the final image with the built jar.
-FROM eclipse-temurin:17-jre
+FROM eclipse-temurin:17-jre-slim
 WORKDIR /app
 # Adjust the path to your jar file if needed.
 COPY --from=build /app/target/*.jar app.jar
