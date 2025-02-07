@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.dataformat.csv.CsvMapper;
 import com.fasterxml.jackson.dataformat.csv.CsvSchema;
 import com.juannas.jd.controller.dto.OrdenServicioInformativaDto;
+import com.juannas.jd.controller.dto.OrdenServicioInformativaFinalCSVDto;
 import com.juannas.jd.controller.dto.OrdenServicioInformativaFinalDto;
 import com.juannas.jd.mapper.OrdenServicioMapper;
 import com.juannas.jd.repository.entity.OrdenServicioInformativaEntity;
@@ -94,14 +95,14 @@ public class OrdenServicioController {
     @PostMapping(value = "/informativa/csv", produces = "text/csv")
     public void exportToCSV(@RequestBody OrdenServicioInformativaDto ordenServicioInformativaDto, HttpServletResponse response) throws IOException {
         OrdenServicioInformativaEntity savedOSI = ordenServicioService.saveSOI(ordenServicioInformativaDto);
-        OrdenServicioInformativaFinalDto dto = ordenServicioMapper.toDto(savedOSI);
+        OrdenServicioInformativaFinalCSVDto dto = ordenServicioMapper.toDto4CSV(savedOSI);
 
         response.setContentType("text/csv");
         response.setHeader("Content-Disposition", "attachment; filename=orden_servicio.csv");
 
         // Convertir DTO a CSV automáticamente
         CsvMapper csvMapper = new CsvMapper();
-        CsvSchema schema = csvMapper.schemaFor(OrdenServicioInformativaFinalDto.class).withHeader();
+        CsvSchema schema = csvMapper.schemaFor(OrdenServicioInformativaFinalCSVDto.class).withHeader();
 
         csvMapper.writer(schema).writeValue(response.getWriter(), dto);
     }

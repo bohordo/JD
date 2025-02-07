@@ -2,6 +2,7 @@ package com.juannas.jd.mapper;
 
 import com.juannas.jd.controller.dto.EspecificacionesTecnicasDto;
 import com.juannas.jd.controller.dto.OrdenServicioInformativaDto;
+import com.juannas.jd.controller.dto.OrdenServicioInformativaFinalCSVDto;
 import com.juannas.jd.controller.dto.OrdenServicioInformativaFinalDto;
 import com.juannas.jd.repository.entity.OrdenServicioInformativaEntity;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +33,23 @@ public class OrdenServicioMapper {
         dto.setCondicionesEconomicas(entity.getCondicionesEconomicas());
         dto.setRequisitos_personal_sst(entity.getRequisitosPersonalSstTexto());
         dto.setObservaciones(entity.getObservaciones());
+
+        return dto;
+    }
+
+    public OrdenServicioInformativaFinalCSVDto toDto4CSV(OrdenServicioInformativaEntity entity) {
+
+        OrdenServicioInformativaFinalCSVDto dto = new OrdenServicioInformativaFinalCSVDto();
+        EspecificacionesTecnicasDto eTDto;
+
+        dto.setConsecutivoOrdenInformativa(entity.getConsecutivoOrdenInformativa());
+        dto.setTipoOrden(entity.getTipoOrdenServicio().getTipoOrden());
+        dto.setFechaOrdenInformativa(entity.getFechaOrdenInformativa().toString());
+
+        eTDto = especificacionesTecnicasMapper.toDto(entity.getBienesServiciosEntity());
+
+        dto.setDetalle(eTDto.getEspecificacionesTecnicasFinalDto().getDetalle());
+        dto.setTotalMasIVA(eTDto.getEspecificacionesTecnicasFinalDto().getTotalMasIVA());
 
         return dto;
     }

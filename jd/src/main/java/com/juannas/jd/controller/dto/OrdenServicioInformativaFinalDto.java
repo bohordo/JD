@@ -25,15 +25,15 @@ public class OrdenServicioInformativaFinalDto {
     @JsonProperty("fecha_orden_informativa")
     private String fechaOrdenInformativa;
 
-    @JsonSerialize(using = ToStringSerializer.class)
+    //@JsonSerialize(using = ToStringSerializer.class)
     @JsonProperty("proyecto")
     private ProyectoEntity proyectoEntity;
 
-    @JsonSerialize(using = ToStringSerializer.class)
+    //@JsonSerialize(using = ToStringSerializer.class)
     @JsonProperty("proveedor")
     private ProveedorEntity proveedorEntity;
 
-    @JsonSerialize(using = ToStringSerializer.class)
+    //@JsonSerialize(using = ToStringSerializer.class)
     @JsonProperty("especificaciones_tecnicas")
     private EspecificacionesTecnicasDto especificacionesTecnicasDto;
 
