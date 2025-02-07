@@ -71,7 +71,7 @@ public class OrdenServicioInformativaEntity {
     @PostPersist
     public void generarConsecutivoOrdenInformativa() {
         if (this.consecutivoOrdenInformativa == null) {
-            this.consecutivoOrdenInformativa = this.ordenServicioId + " " + LocalDate.now().getYear();
+            this.consecutivoOrdenInformativa = "OSI "+this.ordenServicioId + " " + LocalDate.now().getYear();
         }    }
 
     @PrePersist

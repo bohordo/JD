@@ -72,12 +72,12 @@ public class OrdenServicioService {
         ProyectoEntity proyectoEntity = proyectoService.getProyectoByNombre(ordenServicioInformativaDto.getNombreProyecto());
         osi.setProyectoEntity(proyectoEntity);
 
+        //Query Bienes y Servicios
+        equipoEntity = equipoService.getMaquinaByPlaca(ordenServicioInformativaDto.getEspecificacionesTecnicasDto().getPlaca());
+
         equipoEntity.setHoraInicial(ordenServicioInformativaDto.getEspecificacionesTecnicasDto().getHoraInicial());
         equipoEntity.setHoraFinal(ordenServicioInformativaDto.getEspecificacionesTecnicasDto().getHoraFinal());
         equipoEntity.setPeriodo(ordenServicioInformativaDto.getEspecificacionesTecnicasDto().getPeriodo());
-
-        //Query Bienes y Servicios
-        equipoEntity = equipoService.getMaquinaByPlaca(ordenServicioInformativaDto.getEspecificacionesTecnicasDto().getPlaca());
 
         BienesServiciosEntity bienesServiciosEntity = new BienesServiciosEntity();
         bienesServiciosEntity.setDetalle(equipoEntity.getTipoEquipo()+" "+equipoEntity.getPlaca()+" "+equipoEntity.getHoraInicial()+" "+equipoEntity.getHoraFinal()+" "+equipoEntity.getPeriodo());

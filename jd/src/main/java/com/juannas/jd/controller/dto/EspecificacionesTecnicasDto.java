@@ -13,6 +13,9 @@ public class EspecificacionesTecnicasDto {
     @JsonProperty("placa")
     private String placa;
 
+    @JsonProperty("tipo_equipo")
+    private String tipoEquipo;
+
     @JsonProperty("descuento_combustible")
     private String descuentoCombustible;
 
@@ -27,4 +30,13 @@ public class EspecificacionesTecnicasDto {
 
     @JsonProperty("periodo")
     private String periodo;
+
+    @JsonProperty("unidad_medida")
+    private String unidadMedida;
+
+    @JsonProperty("valor_unitario")
+    private String valorUnitario;
+
+    @JsonProperty("especificaciones_tecnicas_final")
+    EspecificacionesTecnicasFinalDto especificacionesTecnicasFinalDto;
 }
