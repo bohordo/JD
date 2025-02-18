@@ -39,6 +39,20 @@ services:
       - "8080:8080"
     environment:
       ADMINER_DEFAULT_SERVER: mariadb
+  
+  jenkins:
+    image: jenkins/jenkins:lts
+    container_name: jenkins_container
+    restart: unless-stopped
+    ports:
+      - "9090:8080"   # Jenkins UI http://localhost:9090
+      - "50000:50000" # Port Jenkins agents
+    volumes:
+      - jenkins_home:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock  # Allow Jenkins control Docker
+    environment:
+      - JENKINS_OPTS="--prefix=/jenkins"  # Optional, if want to access from /jenkins
 
 volumes:
   mariadb_data:
+  jenkins_home:
