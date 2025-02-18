@@ -17,9 +17,6 @@ WORKDIR /app
 # Copy built jar
 COPY --from=build /app/target/*.jar app.jar
 
-# Adjust the path to your jar file if needed.
-COPY --from=build /app/target/*.jar app.jar
-
 # Expose the port that the app listens on.
 EXPOSE ${SERVER_PORT:-8081}
 
